@@ -1,14 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Images/background.png" type="Texture" id=1]
 [ext_resource path="res://Nave.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Movimiento.gd" type="Script" id=3]
+[ext_resource path="res://Movimiento3.gd" type="Script" id=3]
 [ext_resource path="res://funciones/Funcion01.gd" type="Script" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
 r = 200.0
 k = 1.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+r = 200.0
+k = 2.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 4 )
+r = 200.0
+k = 3.0
 
 [node name="Movimiento" type="Control"]
 anchor_right = 1.0
@@ -31,9 +41,19 @@ __meta__ = {
 [node name="Cam" type="Camera2D" parent="."]
 current = true
 
-[node name="Nave" parent="." instance=ExtResource( 2 )]
+[node name="Nave1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -128 )
 z_index = 10
 movement = SubResource( 1 )
+
+[node name="Nave2" parent="." instance=ExtResource( 2 )]
+z_index = 10
+movement = SubResource( 2 )
+
+[node name="Nave3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 128 )
+z_index = 10
+movement = SubResource( 3 )
 
 [node name="ControlPanel" type="HBoxContainer" parent="."]
 anchor_top = -0.493

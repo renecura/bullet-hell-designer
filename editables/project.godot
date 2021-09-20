@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "FuncionBase",
+"class": "AA_Funcion_01",
+"language": "GDScript",
+"path": "res://funciones/Funcion01.gd"
+}, {
+"base": "FuncionBase",
+"class": "AA_Funcion_07",
+"language": "GDScript",
+"path": "res://funciones/Funcion07.gd"
+}, {
+"base": "FuncionBase",
+"class": "AA_Funcion_Circulo",
+"language": "GDScript",
+"path": "res://funciones/Funcion_Circle.gd"
+}, {
 "base": "Reference",
 "class": "Bullet",
 "language": "GDScript",
@@ -22,7 +37,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "FuncionBase",
 "language": "GDScript",
-"path": "res://funciones/scripts/FuncionBase.gd"
+"path": "res://funciones/FuncionBase.gd"
 }, {
 "base": "Reference",
 "class": "Funciones",
@@ -30,6 +45,9 @@ _global_script_classes=[ {
 "path": "res://Funciones.gd"
 } ]
 _global_script_class_icons={
+"AA_Funcion_01": "",
+"AA_Funcion_07": "",
+"AA_Funcion_Circulo": "",
 "Bullet": "",
 "BulletSpawner": "",
 "FuncionBase": "",

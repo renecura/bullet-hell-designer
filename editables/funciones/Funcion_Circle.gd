@@ -1,4 +1,5 @@
 extends FuncionBase
+class_name AA_Funcion_Circulo
 
 export var radius: float = 100.0
 

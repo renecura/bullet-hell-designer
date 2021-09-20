@@ -1,7 +1,7 @@
 extends FuncionBase
+class_name AA_Funcion_07
 
 export var r: float = 100.0
-export var k: float = 1.0
 
 func value(t: float) -> Vector2:
 	var x = r * sin(t)
