@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "FuncionBase",
 "class": "AA_Funcion_14",
 "language": "GDScript",
-"path": "res://funciones/Funcion13.gd"
+"path": "res://funciones/Funcion14.gd"
 }, {
 "base": "FuncionBase",
 "class": "AA_Funcion_15",
@@ -118,6 +118,16 @@ _global_script_classes=[ {
 "class": "Funciones",
 "language": "GDScript",
 "path": "res://Funciones.gd"
+}, {
+"base": "Node2D",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://Nave.gd"
+}, {
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://Weapon.gd"
 } ]
 _global_script_class_icons={
 "AA_Funcion_01": "",
@@ -141,13 +151,15 @@ _global_script_class_icons={
 "Bullet": "",
 "BulletSpawner": "",
 "FuncionBase": "",
-"Funciones": ""
+"Funciones": "",
+"Ship": "",
+"Weapon": ""
 }
 
 [application]
 
 config/name="Bullet Hell Designer"
-run/main_scene="res://Disparo.tscn"
+run/main_scene="res://Levels/Level.tscn"
 config/icon="res://icon.png"
 
 [physics]

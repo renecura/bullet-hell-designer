@@ -4,10 +4,9 @@ var naves = []
 
 func _ready() -> void:
 	
-	naves.append($Nave1)
-	naves.append($Nave2)
-	naves.append($Nave3)
-	naves.append($Nave4)
+	for nave in get_children():
+		if nave is Ship:
+			naves.append(nave)
 	
 	_on_Scale_value_changed($ControlPanel/Scale.value)
 	_on_Speed_value_changed($ControlPanel/Speed.value)

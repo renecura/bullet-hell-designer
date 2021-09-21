@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Images/background.png" type="Texture" id=1]
+[ext_resource path="res://Weapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nave.tscn" type="PackedScene" id=3]
+[ext_resource path="res://funciones/Funcion14.gd" type="Script" id=4]
+[ext_resource path="res://funciones/Polar.gd" type="Script" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+h = -400.0
+v = 20.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 5 )
+angle = -90.0
+magnitud = 200.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+h = 400.0
+v = 20.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 5 )
+angle = -90.0
+magnitud = 200.0
+
+[node name="Level" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+margin_left = -801.594
+margin_top = -462.977
+margin_right = 1246.41
+margin_bottom = 1073.02
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cam" type="Camera2D" parent="."]
+current = true
+
+[node name="Ship1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -184 )
+movement = SubResource( 1 )
+speed = 0.5
+show_trail = false
+
+[node name="Weapon" parent="Ship1" instance=ExtResource( 2 )]
+weapon = SubResource( 3 )
+spawn_frequency = 0.1
+
+[node name="Ship2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -184 )
+movement = SubResource( 2 )
+speed = 0.5
+show_trail = false
+
+[node name="Weapon" parent="Ship2" instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0.890196, 1 )
+weapon = SubResource( 4 )
+spawn_frequency = 0.1
