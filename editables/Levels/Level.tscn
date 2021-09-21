@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Images/background.png" type="Texture" id=1]
 [ext_resource path="res://Weapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nave.tscn" type="PackedScene" id=3]
 [ext_resource path="res://funciones/Funcion14.gd" type="Script" id=4]
-[ext_resource path="res://funciones/Polar.gd" type="Script" id=5]
+[ext_resource path="res://funciones/PolarAngulo.gd" type="Script" id=5]
+[ext_resource path="res://funciones/Polar.gd" type="Script" id=6]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
@@ -12,7 +13,7 @@ h = -400.0
 v = 20.0
 
 [sub_resource type="Resource" id=3]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 angle = -90.0
 magnitud = 200.0
 
@@ -22,9 +23,21 @@ h = 400.0
 v = 20.0
 
 [sub_resource type="Resource" id=4]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 angle = -90.0
 magnitud = 200.0
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 5 )
+initial_angle = -90.0
+angular_speed = 1.0
+bullet_speed = 100.0
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 5 )
+initial_angle = -90.0
+angular_speed = -1.0
+bullet_speed = 100.0
 
 [node name="Level" type="Control"]
 anchor_right = 1.0
@@ -47,7 +60,7 @@ __meta__ = {
 current = true
 
 [node name="Ship1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -184 )
+position = Vector2( 0, -88 )
 movement = SubResource( 1 )
 speed = 0.5
 show_trail = false
@@ -57,12 +70,22 @@ weapon = SubResource( 3 )
 spawn_frequency = 0.1
 
 [node name="Ship2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -184 )
+position = Vector2( 0, -88 )
 movement = SubResource( 2 )
 speed = 0.5
 show_trail = false
 
 [node name="Weapon" parent="Ship2" instance=ExtResource( 2 )]
-modulate = Color( 1, 0, 0.890196, 1 )
 weapon = SubResource( 4 )
 spawn_frequency = 0.1
+
+[node name="Boss" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.709804, 0, 1, 1 )
+position = Vector2( 0, -224 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Weapon1" parent="Boss" instance=ExtResource( 2 )]
+weapon = SubResource( 5 )
+
+[node name="Weapon2" parent="Boss" instance=ExtResource( 2 )]
+weapon = SubResource( 6 )
