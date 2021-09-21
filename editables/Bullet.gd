@@ -9,3 +9,4 @@ var animation_lifetime : float = 0.0
 var image_offset : int = 0
 var layer : String = "front"
 var speed: float
+var origin: Vector2 = Vector2.ZERO

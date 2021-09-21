@@ -76,7 +76,7 @@ func spawn_bullet(i_movement: Vector2, i_position: Vector2 = Vector2.ZERO) -> vo
 	var bullet : Bullet = Bullet.new()
 	bullet.movement_vector = i_movement
 	bullet.current_position  = i_position
-	
+	bullet.origin = i_position
 	_configure_collision_for_bullet(bullet)
 	
 	bullets.append(bullet)

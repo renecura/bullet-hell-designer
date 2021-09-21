@@ -1,4 +1,5 @@
 extends FuncionBase
+class_name AA_Funcion_Ellipse
 
 export var a: float = 200.0
 export var b: float = 100.0
